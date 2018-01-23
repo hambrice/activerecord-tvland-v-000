@@ -10,4 +10,5 @@ class Actor < ActiveRecord::Base
     self.characters.each do |c|
       puts c  + " - " + c.show
     end
+  end
 end
