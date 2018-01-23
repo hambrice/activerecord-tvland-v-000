@@ -1,3 +1,5 @@
+require 'pry'
+
 class Actor < ActiveRecord::Base
   has_many :characters
   has_many :shows, through: :character
@@ -8,6 +10,7 @@ class Actor < ActiveRecord::Base
 
   def list_roles
     self.characters.each do |c|
+      binding.pry
       puts "#{c.name} - #{c.show.name}"
     end
   end
