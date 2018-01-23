@@ -4,6 +4,6 @@ class Show < ActiveRecord::Base
   belongs_to :network
 
   def build_network(hash)
-
+    self.network = Network.find_or_create_by(hash)
   end
 end
